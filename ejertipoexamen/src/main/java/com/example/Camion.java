@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Calendar;
+
 public class Camion extends Vehiculo {
 
     private double capacidadCarga;
@@ -39,8 +41,26 @@ public class Camion extends Vehiculo {
     }
 
     @Override
-    public int calcularRiesgo() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public TiposRiesgo calcularRiesgo() {
+        int aniosExperiencia = getPropietario().aniosExperiencia();
+        if(aniosExperiencia < 5){
+            throw new IllegalArgumentException("El propietario no tiene la experiencia suficiente para conducir un camion");
+        } else if(aniosExperiencia > 5 && aniosExperiencia < 10){
+            return TiposRiesgo.MEDIORIESGO;
+        } else if(aniosExperiencia > 10){
+            return TiposRiesgo.BAJORIESGO;
+        }
+        return null;
+    }
+
+    @Override
+    public double calcularDepreciacion(){
+        int edad = Calendar.getInstance().get(Calendar.YEAR) - getAnioFabricacion() * (int) 0.9;
+        double factorKilometraje = 0.6 * getKilometraje();
+
+        double valorActual = getPrecio() * (Math.pow(0.85, edad)) * (1 - (getKilometraje() * factorKilometraje/100000));
+        return valorActual;
+        
     }
 
     
