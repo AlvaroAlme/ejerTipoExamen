@@ -25,6 +25,7 @@ public class Sedan extends Coche {
 
     }
 
+    // Lo de los enumerados. Además, el nombre no está bien. La primera en mayúscula como las clases.
     private enum nivelConfort {
         BASICO, MEDIO, PREMIUM
     }

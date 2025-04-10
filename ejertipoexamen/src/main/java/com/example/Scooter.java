@@ -33,5 +33,7 @@ public class Scooter extends Moto {
         return valorActual;
         
     }
+
+    // TODO: Falta el toString.
     
 }

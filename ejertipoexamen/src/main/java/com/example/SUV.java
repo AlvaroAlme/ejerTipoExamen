@@ -6,6 +6,8 @@ public class SUV extends Coche {
 
     private boolean capacidadOffroad;
     private double alturaLibreSuelo;
+
+    // TODO: Lo de los enumerados.
     private enum Traccion { DELANTERA, TRASERA, X4X4 };
 
     public boolean isCapacidadOffroad() {

@@ -53,6 +53,8 @@ public class Camion extends Vehiculo {
         return null;
     }
 
+    // TODO: Has puesto que sobreescribes (override) este método, pero no esta en la superclase
+
     @Override
     public double calcularDepreciacion(){
         int edad = Calendar.getInstance().get(Calendar.YEAR) - getAnioFabricacion() * (int) 0.9;
@@ -62,6 +64,8 @@ public class Camion extends Vehiculo {
         return valorActual;
         
     }
+
+    // TODO: Falta el toString.
 
     
 }

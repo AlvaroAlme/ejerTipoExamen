@@ -62,6 +62,8 @@ public abstract  class Vehiculo {
     public void setPropietario(Persona propietario) {
         this.propietario = propietario;
     }
+
+    // TODO: Esto hemos dicho que no. Los enumerados en su propio fichero.
     private enum Estado {DISPONIBLE, VENDIDO};
 
 
