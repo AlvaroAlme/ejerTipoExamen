@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Calendar;
+
 public class Sedan extends Coche {
 
     private double espacioInterior;
@@ -34,5 +36,12 @@ public class Sedan extends Coche {
         return "Sedan [espacioInterior=" + espacioInterior + "informacion comun=" + super.toString() + "]";
     }
 ;
+    @Override
+    public double calcularDepreciacion(){
+        int edad = Calendar.getInstance().get(Calendar.YEAR) - getAnioFabricacion();
+        double factorKilometraje = 0.8 * getKilometraje();
+        double valorActual = getPrecio() * (Math.pow(0.85, edad)) * (1 - (getKilometraje() * factorKilometraje/100000));
+        return valorActual;
+    }
 
 }
