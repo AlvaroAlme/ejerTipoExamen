@@ -65,10 +65,7 @@ public abstract  class Vehiculo implements Valorable{
     public void setPropietario(Persona propietario) {
         this.propietario = propietario;
     }
-    private enum Estado {DISPONIBLE, VENDIDO};
-
-
-    
+  
     @Override
     public String toString() {
         return "Vehiculo [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", anioFabricacion="

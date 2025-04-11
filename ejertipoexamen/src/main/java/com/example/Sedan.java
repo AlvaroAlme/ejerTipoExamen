@@ -27,9 +27,6 @@ public class Sedan extends Coche {
 
     }
 
-    private enum nivelConfort {
-        BASICO, MEDIO, PREMIUM
-    }
 
     @Override
     public String toString() {

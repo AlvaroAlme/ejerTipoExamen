@@ -48,6 +48,15 @@ public class MotoDeportiva extends Moto{
         return valorActual;
         
     }
+
+    @Override
+    public String toString() {
+        return "MotoDeportiva [velocidadMaxima=" + velocidadMaxima + ", tieneQuickShifter=" + tieneQuickShifter
+                + ", toString()=" + super.toString() + "]";
+    }
+
+    
+   
     
     
 }

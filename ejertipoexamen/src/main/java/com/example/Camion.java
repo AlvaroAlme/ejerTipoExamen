@@ -53,6 +53,9 @@ public class Camion extends Vehiculo {
         return null;
     }
 
+    // TODO: Has puesto que sobreescribes (override) este método, pero no esta en la superclase
+    // En mi defensa he de decir que si lo tenia en la superclase Vehiculo pero creo que lo añadi despues de hacer el commit.....O no te has fijado bien :)
+
     @Override
     public double calcularDepreciacion(){
         int edad = Calendar.getInstance().get(Calendar.YEAR) - getAnioFabricacion() * (int) 0.9;
@@ -63,5 +66,12 @@ public class Camion extends Vehiculo {
         
     }
 
+    @Override
+    public String toString() {
+        return "Camion [capacidadCarga=" + capacidadCarga + ", numEjes=" + numEjes + ", potenciaMotor=" + potenciaMotor
+                + ", longitudRemolque=" + longitudRemolque + ", toString()=" + super.toString() + "]";
+    }
+
+    
     
 }

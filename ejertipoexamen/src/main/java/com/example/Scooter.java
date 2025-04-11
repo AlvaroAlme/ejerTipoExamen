@@ -33,5 +33,13 @@ public class Scooter extends Moto {
         return valorActual;
         
     }
+
+    @Override
+    public String toString() {
+        return "Scooter [espacioBajoAsiento=" + espacioBajoAsiento + ", toString()=" + super.toString() + "]";
+    }
+
+
+    
     
 }

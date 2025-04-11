@@ -28,7 +28,14 @@ public abstract class Moto extends Vehiculo {
     public void setAlturaAsiento(double alturaAsiento) {
         this.alturaAsiento = alturaAsiento;
     }
-    private enum tipoTransmision{MANUAL, AUTOMATICA};
+
+    @Override
+    public String toString() {
+        return "Moto [cilindrada=" + cilindrada + ", peso=" + peso + ", alturaAsiento=" + alturaAsiento
+                + ", toString()=" + super.toString() + "]";
+    }
+
+    
     
     
 }
