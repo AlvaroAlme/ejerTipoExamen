@@ -4,13 +4,19 @@ public abstract class Coche extends Vehiculo {
 
     private int numPuertas;
     
-    
+    public Coche(){
+        super();
+    }
 
     public Coche(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje, double precio, int tipoVehiculo,
             Persona propietario, int numPuertas, int capacidadMaletero) {
         super(matricula, marca, modelo, anioFabricacion, kilometraje, precio, tipoVehiculo, propietario);
         this.numPuertas = numPuertas;
         this.capacidadMaletero = capacidadMaletero;
+    }
+
+    public Coche(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje, double precio, int tipoVehiculo, Persona propietario) {
+        super(matricula, marca, modelo, anioFabricacion, kilometraje, precio, tipoVehiculo, propietario);
     }
 
     public int getNumPuertas() {

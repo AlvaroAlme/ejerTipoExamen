@@ -7,7 +7,9 @@ public class Sedan extends Coche {
     private double espacioInterior;
     private int nivelConfort;
 
-    
+    public Sedan(){
+        super();
+    }
 
     public Sedan(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje, double precio, int tipoVehiculo,
             Persona propietario, int numPuertas, int capacidadMaletero, double espacioInterior, int nivelConfort) {

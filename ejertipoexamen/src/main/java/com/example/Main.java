@@ -55,6 +55,7 @@ public class Main {
         int anioFabricacion = Menu.preguntarEntero("Inrtoduce el año de fabricacion del vehiculo: ");
         int kilometraje = Menu.preguntarEntero("Inrtoduce el numero de kilometros del vehiculo: ");
         double precio = Menu.preguntarDecimal("introduce el precio del vehiculo: ");
+
         
         int tipoVehiculo = Menu.preguntarOpcion(new String[]{"Coche", "Moto", "Camion"});
 
@@ -70,14 +71,19 @@ public class Main {
                     case 1:
                         double espacioInterior = Menu.preguntarDecimal("Introduce el espacio interior en m2: ");
                         int nivelConfort = Menu.preguntarOpcion(new String[]{"Basico", "Medio", "Premium"});
-                        coche = new Coche(matricula,marca,modelo,anioFabricacion,kilometraje,precio,tipoVehiculo,numPuertas,tipoCombustible,capacidadMaletero,traccion,tipoCoche,espacioInterior,nivelConfort);
+                        Sedan sedan = new Sedan();
+                        sedan.setMatricula(matricula);
+                        sedan.setMarca(marca);
+                        sedan.setModelo(modelo);
+
 
                         break;
                     case 2:
                         boolean capacidadOffroad = Menu.preguntaBoolean("¿Puede ir por fuera de carretera?: ");
                         double alturaLibreSuelo = Menu.preguntarDecimal("introduce la altura: ");
-
-                        vehiculo = new Coche(matricula, marca, modelo, anioFabricacion, kilometraje, precio,tipoVehiculo,numPuertas, tipoCombustible,capacidadMaletero,traccion,tipoCoche,capacidadOffroad, alturaLibreSuelo);
+                        SUV suv = new SUV();
+                        suv.setMatricula(matricula);
+                        
                         break;
                     case 3:
 
@@ -98,5 +104,9 @@ public class Main {
     public static void listarVehiculo(ConcesionarioAPP concesionarioAPP){
         System.out.println("Este es el listado de vehiculos: ");
         concesionarioAPP.listadoVehiculos();
+    }
+
+    public static void resumenRiesgo(ConcesionarioAPP concesionarioAPP){
+
     }
 }

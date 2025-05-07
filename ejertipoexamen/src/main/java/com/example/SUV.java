@@ -7,7 +7,9 @@ public class SUV extends Coche {
     private boolean capacidadOffroad;
     private double alturaLibreSuelo;
 
-    
+    public SUV(){
+        super();
+    }
 
     public SUV(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje, double precio,
             Persona propietario, int numPuertas, int capacidadMaletero, boolean capacidadOffroad,

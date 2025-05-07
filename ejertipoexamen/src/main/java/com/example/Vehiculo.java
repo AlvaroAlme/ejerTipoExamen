@@ -1,8 +1,5 @@
 package com.example;
 
-import java.util.Calendar;
-import java.util.spi.CalendarDataProvider;
-
 public abstract  class Vehiculo implements Valorable{
     
     private String matricula, marca, modelo;
@@ -10,6 +7,10 @@ public abstract  class Vehiculo implements Valorable{
     private double precio;
     private Persona propietario;
     private int tipoVehiculo;
+
+    public Vehiculo(){
+        super();
+    }
 
     
 
@@ -94,5 +95,5 @@ public abstract  class Vehiculo implements Valorable{
     @Override
     public abstract double calcularDepreciacion();
 
-    
+
 }
