@@ -8,6 +8,14 @@ public class Persona {
     private int fechaExpedicionCarnet;
     private int anioNacimiento;
 
+    public Persona(String nombre, String apellidos, String dNI, int fechaExpedicionCarnet, int anioNacimiento) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        DNI = dNI;
+        this.fechaExpedicionCarnet = fechaExpedicionCarnet;
+        this.anioNacimiento = anioNacimiento;
+    }
+
     public String getNombre() {
         return nombre;
     }

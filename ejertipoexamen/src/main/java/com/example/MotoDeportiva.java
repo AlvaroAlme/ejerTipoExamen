@@ -4,6 +4,12 @@ import java.util.Calendar;
 
 public class MotoDeportiva extends Moto{
 
+    public MotoDeportiva(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje,
+            double precio, int tipoVehiculo, Persona propietario) {
+        super(matricula, marca, modelo, anioFabricacion, kilometraje, precio, tipoVehiculo, propietario);
+        //TODO Auto-generated constructor stub
+    }
+
     private double velocidadMaxima;
     private boolean tieneQuickShifter;
 

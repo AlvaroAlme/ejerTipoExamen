@@ -7,8 +7,16 @@ public class SUV extends Coche {
     private boolean capacidadOffroad;
     private double alturaLibreSuelo;
 
-    // TODO: Lo de los enumerados.
-    private enum Traccion { DELANTERA, TRASERA, X4X4 };
+    
+
+    public SUV(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje, double precio,
+            Persona propietario, int numPuertas, int capacidadMaletero, boolean capacidadOffroad,
+            double alturaLibreSuelo) {
+        super(matricula, marca, modelo, anioFabricacion, kilometraje, precio, capacidadMaletero, propietario, numPuertas,
+                capacidadMaletero);
+        this.capacidadOffroad = capacidadOffroad;
+        this.alturaLibreSuelo = alturaLibreSuelo;
+    }
 
     public boolean isCapacidadOffroad() {
         return capacidadOffroad;

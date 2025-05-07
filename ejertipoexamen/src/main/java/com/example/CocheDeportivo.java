@@ -8,6 +8,18 @@ public class CocheDeportivo extends Coche {
     private int potenciaCV;
     private boolean tieneModoPista;
 
+    
+
+    public CocheDeportivo(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje,
+            double precio, Persona propietario, int numPuertas, int capacidadMaletero, double aceleracion,
+            int potenciaCV, boolean tieneModoPista) {
+        super(matricula, marca, modelo, anioFabricacion, kilometraje, precio, potenciaCV, propietario, numPuertas,
+                capacidadMaletero);
+        this.aceleracion = aceleracion;
+        this.potenciaCV = potenciaCV;
+        this.tieneModoPista = tieneModoPista;
+    }
+
     public double getAceleracion() {
         return aceleracion;
     }

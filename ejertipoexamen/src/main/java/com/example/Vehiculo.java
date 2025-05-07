@@ -9,6 +9,21 @@ public abstract  class Vehiculo implements Valorable{
     private int anioFabricacion, kilometraje;
     private double precio;
     private Persona propietario;
+    private int tipoVehiculo;
+
+    
+
+    public Vehiculo(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje, double precio, int tipoVehiculo,
+            Persona propietario) {
+        this.matricula = matricula;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anioFabricacion = anioFabricacion;
+        this.kilometraje = kilometraje;
+        this.precio = precio;
+        this.tipoVehiculo = tipoVehiculo;
+        this.propietario = propietario;
+    }
 
     public String getMatricula() {
         return matricula;
@@ -65,6 +80,7 @@ public abstract  class Vehiculo implements Valorable{
     public void setPropietario(Persona propietario) {
         this.propietario = propietario;
     }
+
   
     @Override
     public String toString() {

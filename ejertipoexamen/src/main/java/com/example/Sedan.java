@@ -5,6 +5,18 @@ import java.util.Calendar;
 public class Sedan extends Coche {
 
     private double espacioInterior;
+    private int nivelConfort;
+
+    
+
+    public Sedan(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje, double precio, int tipoVehiculo,
+            Persona propietario, int numPuertas, int capacidadMaletero, double espacioInterior, int nivelConfort) {
+        super(matricula, marca, modelo, anioFabricacion, kilometraje, precio, tipoVehiculo, propietario, numPuertas,
+                capacidadMaletero);
+        this.espacioInterior = espacioInterior;
+        this.nivelConfort = nivelConfort;
+    }
+
 
     public double getEspacioInterior() {
         return espacioInterior;

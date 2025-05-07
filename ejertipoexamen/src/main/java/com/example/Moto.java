@@ -2,6 +2,12 @@ package com.example;
 
 public abstract class Moto extends Vehiculo {
 
+    public Moto(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje, double precio,
+            int tipoVehiculo, Persona propietario) {
+        super(matricula, marca, modelo, anioFabricacion, kilometraje, precio, tipoVehiculo, propietario);
+        //TODO Auto-generated constructor stub
+    }
+
     private int cilindrada, peso;
     private double alturaAsiento;
 
