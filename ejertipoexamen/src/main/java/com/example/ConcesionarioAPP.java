@@ -55,10 +55,4 @@ public class ConcesionarioAPP {
 
 
 }
-
-    public double resumenRiesgo(Vehiculo vehiculo){
-        for(int i = 0; i < listadoVehiculo.length && listadoVehiculo[i] != null; i++){
-            
-        }
-    }
 }
