@@ -67,4 +67,17 @@ public class Menu {
         pregunta.preguntar();
         return pregunta.getRespuesta();
     }
+
+    public static String preguntarMatricula(String textoPregunta){
+        PreguntaMatricula pregunta = new PreguntaMatricula(textoPregunta);
+        pregunta.preguntar();
+        return pregunta.getRespuesta();
+    }
+
+    public static String preguntarDNI(String textoPregunta){
+        PreguntaDNI pregunta = new PreguntaDNI(textoPregunta);
+        pregunta.preguntar();
+        return pregunta.getRespuesta();
+    }
+
 }

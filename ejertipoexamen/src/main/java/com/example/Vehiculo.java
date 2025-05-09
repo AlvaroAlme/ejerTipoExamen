@@ -82,6 +82,10 @@ public abstract  class Vehiculo implements Valorable{
         this.propietario = propietario;
     }
 
+    public void setTipoVehiculo(int tipoVehiculo){
+        this.tipoVehiculo = tipoVehiculo;
+    }
+
   
     @Override
     public String toString() {

@@ -46,7 +46,7 @@ public class ConcesionarioAPP {
         if (añosComprador < 18) {
             System.out.println("Debes ser mayor de edad para comprar un vehiculo");
         } else {
-            //TODO: aqui primero tengo que tener el vehiculo creado con todos los datos necesarios
+            return true;
 
         }
         return false;

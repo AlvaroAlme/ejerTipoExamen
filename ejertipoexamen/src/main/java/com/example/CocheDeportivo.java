@@ -8,6 +8,9 @@ public class CocheDeportivo extends Coche {
     private int potenciaCV;
     private boolean tieneModoPista;
 
+    public CocheDeportivo(){
+        super();
+    }
     
 
     public CocheDeportivo(String matricula, String marca, String modelo, int anioFabricacion, int kilometraje,

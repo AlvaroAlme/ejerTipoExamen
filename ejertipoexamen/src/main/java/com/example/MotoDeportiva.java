@@ -10,6 +10,10 @@ public class MotoDeportiva extends Moto{
         //TODO Auto-generated constructor stub
     }
 
+    public MotoDeportiva(){
+        super();
+    }
+
     private double velocidadMaxima;
     private boolean tieneQuickShifter;
 

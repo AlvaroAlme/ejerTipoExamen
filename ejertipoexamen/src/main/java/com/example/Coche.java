@@ -3,6 +3,10 @@ package com.example;
 public abstract class Coche extends Vehiculo {
 
     private int numPuertas;
+    private int capacidadMaletero;
+    private int tipoCombustible;
+    private int traccion;
+    private int tipoCoche;
     
     public Coche(){
         super();
@@ -34,15 +38,41 @@ public abstract class Coche extends Vehiculo {
     public void setCapacidadMaletero(int capacidadMaletero) {
         this.capacidadMaletero = capacidadMaletero;
     }
-    private enum tipoCombustible{GASOLINA, DIESEL, HIBRIDO, ELECTRICO};
-    private int capacidadMaletero;
-    private enum traccion{DELANTERA, TRASERA, X4X4};
+
+    
+    
+    public int getTipoCombustible() {
+        return tipoCombustible;
+    }
+
+    public void setTipoCombustible(int tipoCombustible) {
+        this.tipoCombustible = tipoCombustible;
+    }
+
+    public int getTraccion() {
+        return traccion;
+    }
+
+    public void setTraccion(int traccion) {
+        this.traccion = traccion;
+    }
+
+    public int getTipoCoche() {
+        return tipoCoche;
+    }
+
+    public void setTipoCoche(int tipoCoche) {
+        this.tipoCoche = tipoCoche;
+    }
 
     @Override
     public String toString() {
-        return "Coche [numPuertas=" + numPuertas + ", capacidadMaletero=" + capacidadMaletero + ", informacion comun="
-                + super.toString() + "]";
-    };
+        return "Coche [numPuertas=" + numPuertas + ", capacidadMaletero=" + capacidadMaletero + ", tipoCombustible="
+                + tipoCombustible + ", traccion=" + traccion + ", tipoCoche=" + tipoCoche + "]";
+    }
+
+
+    
 
     
     

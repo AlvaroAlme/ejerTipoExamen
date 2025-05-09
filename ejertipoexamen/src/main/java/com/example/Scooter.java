@@ -9,6 +9,10 @@ public class Scooter extends Moto {
         //TODO Auto-generated constructor stub
     }
 
+    public Scooter(){
+        super();
+    }
+
     private int espacioBajoAsiento;
 
     public int getEspacioBajoAsiento() {

@@ -10,6 +10,10 @@ public class Camion extends Vehiculo {
         //TODO Auto-generated constructor stub
     }
 
+    public Camion(){
+        super();
+    }
+
     private double capacidadCarga;
     private int numEjes, potenciaMotor;
     private double longitudRemolque;

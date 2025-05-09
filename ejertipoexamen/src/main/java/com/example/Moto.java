@@ -8,8 +8,14 @@ public abstract class Moto extends Vehiculo {
         //TODO Auto-generated constructor stub
     }
 
+    public Moto(){
+        super();
+    }
+
     private int cilindrada, peso;
     private double alturaAsiento;
+    private int tipoTransmision;
+    private int tipoMoto;
 
     public int getCilindrada() {
         return cilindrada;
@@ -35,12 +41,31 @@ public abstract class Moto extends Vehiculo {
         this.alturaAsiento = alturaAsiento;
     }
 
+    public int getTipoTransmision() {
+        return tipoTransmision;
+    }
+
+    public void setTipoTransmision(int tipoTransmision) {
+        this.tipoTransmision = tipoTransmision;
+    }
+
+    public int getTipoMoto(){
+        return tipoMoto;
+    }
+
+    public void setTipoMoto(int tipoMoto){
+        this.tipoMoto = tipoMoto;
+    }
+
+    
+
     @Override
     public String toString() {
         return "Moto [cilindrada=" + cilindrada + ", peso=" + peso + ", alturaAsiento=" + alturaAsiento
                 + ", toString()=" + super.toString() + "]";
     }
 
+    
     
     
     

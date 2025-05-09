@@ -11,9 +11,13 @@ public class Persona {
     public Persona(String nombre, String apellidos, String dNI, int fechaExpedicionCarnet, int anioNacimiento) {
         this.nombre = nombre;
         this.apellidos = apellidos;
-        DNI = dNI;
+        
         this.fechaExpedicionCarnet = fechaExpedicionCarnet;
         this.anioNacimiento = anioNacimiento;
+    }
+
+    public Persona(){
+        super();
     }
 
     public String getNombre() {
