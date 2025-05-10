@@ -38,20 +38,31 @@ public class ConcesionarioAPP {
        return listadoVehiculo;
     }
 
-
-    public boolean asignarVehiculo(Persona comprador) {
-
-        int añosComprador = Calendar.getInstance().get(Calendar.YEAR) - comprador.getAnioNacimiento();
-
-        if (añosComprador < 18) {
-            System.out.println("Debes ser mayor de edad para comprar un vehiculo");
-        } else {
-            return true;
-
-        }
-        return false;
-
+    public Vehiculo buscarVehiculo(String matricula) {
+        return mapaVehiculo.get(matricula);
     }
+
+
+    public boolean asignarVehiculo(Persona comprador, String matricula) {
+        int añosComprador = Calendar.getInstance().get(Calendar.YEAR) - comprador.getAnioNacimiento();
+    
+        if (añosComprador < 18) {
+            System.out.println("Debes ser mayor de edad para comprar un vehículo");
+            return false;
+        }
+    
+        Vehiculo vehiculo = buscarVehiculo(matricula);
+    
+        if (vehiculo != null) {
+            vehiculo.setPropietario(comprador);
+            System.out.println("Vehículo asignado correctamente.");
+            return true;
+        } else {
+            System.out.println("No se encontró el vehículo con matrícula " + matricula);
+            return false;
+        }
+    }
+    
 
     
 }

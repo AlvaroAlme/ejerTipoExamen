@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.menu.Menu;
+import com.example.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -72,7 +73,7 @@ public class Main {
                     case 1:
                         double espacioInterior = Menu.preguntarDecimal("Introduce el espacio interior en m2: ");
                         int nivelConfort = Menu.preguntarOpcion(new String[]{"Basico", "Medio", "Premium"});
-                        //coche = new Coche(matricula,marca,modelo,anioFabricacion,kilometraje,precio,tipoVehiculo,numPuertas,tipoCombustible,capacidadMaletero,traccion,tipoCoche,espacioInterior,nivelConfort);
+                        
                         Sedan sedan = new Sedan();
                         sedan.setMatricula(matricula);
                         sedan.setMarca(marca);
@@ -88,11 +89,15 @@ public class Main {
                         sedan.setTraccion(traccion);
                         sedan.setTipoCoche(tipoCoche);
 
+                        registrarVehiculo(concesionarioAPP);
+                        
+
+
                         break;
                     case 2:
                         boolean capacidadOffroad = Menu.preguntaBoolean("¿Puede ir por fuera de carretera?: ");
                         double alturaLibreSuelo = Menu.preguntarDecimal("introduce la altura: ");
-                        //vehiculo = new Coche(matricula, marca, modelo, anioFabricacion, kilometraje, precio,tipoVehiculo,numPuertas, tipoCombustible,capacidadMaletero,traccion,tipoCoche,capacidadOffroad, alturaLibreSuelo);
+                        
                         SUV suv = new SUV();
                         suv.setMatricula(matricula);
                         suv.setMarca(marca);
@@ -108,6 +113,8 @@ public class Main {
                         suv.setTipoCoche(tipoCoche);
                         suv.setCapacidadOffroad(capacidadOffroad);
                         suv.setAlturaLibreSuelo(alturaLibreSuelo);
+
+                        registrarVehiculo(concesionarioAPP);
                         break;
                     case 3:
                         double aceleracion = Menu.preguntarDecimal("Aceleracion 0 a 100 en segundos: ");
@@ -130,6 +137,8 @@ public class Main {
                         cocheDeportivo.setAceleracion(aceleracion);
                         cocheDeportivo.setPotenciaCV(potenciaCV);
                         cocheDeportivo.setTieneModoPista(tieneModoPista);
+
+                        registrarVehiculo(concesionarioAPP);
 
                         break;
             
@@ -161,6 +170,8 @@ public class Main {
                         scooter.setAlturaAsiento(alturaAsiento);
                         scooter.setTipoTransmision(tipoTransmision);
                         scooter.setEspacioBajoAsiento(espacioBajoAsiento);
+
+                        registrarVehiculo(concesionarioAPP);
                         
                         break;
                     
@@ -183,6 +194,8 @@ public class Main {
                         motoDeportiva.setVelocidadMaxima(velocidadMaxima);
                         motoDeportiva.setTieneQuickShifter(tieneQuickShifter);
 
+                        registrarVehiculo(concesionarioAPP);
+
                         break;
                 }
             break;
@@ -201,6 +214,9 @@ public class Main {
                 camion.setTipoVehiculo(tipoVehiculo);
                 camion.setCapacidadCarga(capacidadCarga);
                 camion.setNumEjes(numEjes);
+
+                registrarVehiculo(concesionarioAPP);
+
             break;
         }
     }
@@ -224,6 +240,12 @@ public class Main {
         persona.setDNI(dniPropietario);
         persona.setFechaExpedicionCarnet(fechaExpedicionCarnet);
         persona.setAnioNacimiento(anioNacimiento);
+
+        String matricula = Menu.preguntarMatricula("Introduce la matricula del vehiculo que compras: ");
+
+        concesionarioAPP.asignarVehiculo(persona, matricula);
+
+
 
     }
 }
