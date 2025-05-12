@@ -9,48 +9,47 @@ public class Main {
 
         int opcion = 0;
 
-        while(opcion != 7){
+        while (opcion != 7) {
 
-            String[] opciones = {"Registrar vehiculo", "Listar vehiculos", "Buscar vehiculo", "Asignar vehiculo", "Resumen riesgo", "Calcular depreciacion del vehiculo", "Salir"};
+            String[] opciones = { "Registrar vehiculo", "Listar vehiculos", "Buscar vehiculo", "Asignar vehiculo",
+                    "Resumen riesgo", "Calcular depreciacion del vehiculo", "Salir" };
             opcion = Menu.preguntarOpcion(opciones);
 
             switch (opcion) {
                 case 1:
                     registrarVehiculo(concesionarioAPP);
-                    
+
                     break;
                 case 2:
-                    
+
                     break;
                 case 3:
-                    
+
                     break;
                 case 4:
-                    
+
                     break;
                 case 5:
                     listarVehiculo(concesionarioAPP);
                     break;
                 case 6:
-                    
+
                     break;
                 case 7:
-                System.out.println("Adios!");
+                    System.out.println("Adios!");
                     break;
-            
+
                 default:
                     break;
             }
         }
     }
 
-
-    public static void registrarVehiculo(ConcesionarioAPP concesionarioAPP){
+    public static void registrarVehiculo(ConcesionarioAPP concesionarioAPP) {
 
         Vehiculo vehiculo = null;
         Coche coche = null;
         Persona persona = null;
-        
 
         String matricula = Menu.preguntarMatricula("Introduce la matricula del vehiculo: ");
         String marca = Menu.preguntarTexto("Introduce la marca del vehiculo: ");
@@ -58,22 +57,23 @@ public class Main {
         int anioFabricacion = Menu.preguntarEntero("Inrtoduce el año de fabricacion del vehiculo: ");
         int kilometraje = Menu.preguntarEntero("Inrtoduce el numero de kilometros del vehiculo: ");
         double precio = Menu.preguntarDecimal("introduce el precio del vehiculo: ");
-        
-        int tipoVehiculo = Menu.preguntarOpcion(new String[]{"Coche", "Moto", "Camion"});
 
-        switch(tipoVehiculo){
+        int tipoVehiculo = Menu.preguntarOpcion(new String[] { "Coche", "Moto", "Camion" });
+
+        switch (tipoVehiculo) {
             case 1:
                 int numPuertas = Menu.preguntarEntero("Introduce el numero de puertas: ");
-                int tipoCombustible = Menu.preguntarOpcion(new String[]{"GASOLINA", "DIESEL", "HIBRIDO", "ELECTRICO"});
+                int tipoCombustible = Menu
+                        .preguntarOpcion(new String[] { "GASOLINA", "DIESEL", "HIBRIDO", "ELECTRICO" });
                 int capacidadMaletero = Menu.preguntarEntero("Introduce la capacidad del maletero en Litros: ");
-                int traccion = Menu.preguntarOpcion(new String[]{"DELANTERA", "TRASERA", "4X4"});
-                int tipoCoche = Menu.preguntarOpcion(new String[]{"Sedan", "SUV", "Deportivo"});
+                int traccion = Menu.preguntarOpcion(new String[] { "DELANTERA", "TRASERA", "4X4" });
+                int tipoCoche = Menu.preguntarOpcion(new String[] { "Sedan", "SUV", "Deportivo" });
 
                 switch (tipoCoche) {
                     case 1:
                         double espacioInterior = Menu.preguntarDecimal("Introduce el espacio interior en m2: ");
-                        int nivelConfort = Menu.preguntarOpcion(new String[]{"Basico", "Medio", "Premium"});
-                        
+                        int nivelConfort = Menu.preguntarOpcion(new String[] { "Basico", "Medio", "Premium" });
+
                         Sedan sedan = new Sedan();
                         sedan.setMatricula(matricula);
                         sedan.setMarca(marca);
@@ -90,14 +90,12 @@ public class Main {
                         sedan.setTipoCoche(tipoCoche);
 
                         registrarVehiculo(concesionarioAPP);
-                        
-
 
                         break;
                     case 2:
                         boolean capacidadOffroad = Menu.preguntaBoolean("¿Puede ir por fuera de carretera?: ");
                         double alturaLibreSuelo = Menu.preguntarDecimal("introduce la altura: ");
-                        
+
                         SUV suv = new SUV();
                         suv.setMatricula(matricula);
                         suv.setMarca(marca);
@@ -141,21 +139,21 @@ public class Main {
                         registrarVehiculo(concesionarioAPP);
 
                         break;
-            
+
                 }
-            break;
+                break;
 
             case 2:
                 int cilindrada = Menu.preguntarEntero("introduce la cilindrada de la moto: ");
                 int peso = Menu.preguntarEntero("Introduce el peso de la moto: ");
                 double alturaAsiento = Menu.preguntarDecimal("Introduce la altura del asiento: ");
                 int tipoTransmision = Menu.preguntarEntero("¿Cual es el tipo de transmision?: ");
-                int tipoMoto = Menu.preguntarOpcion(new String[]{"Scooter", "Deportiva"});
+                int tipoMoto = Menu.preguntarOpcion(new String[] { "Scooter", "Deportiva" });
 
-                
                 switch (tipoMoto) {
                     case 1:
-                        int espacioBajoAsiento = Menu.preguntarEntero("Introduce la capacidad bajo el asiento en litros: ");
+                        int espacioBajoAsiento = Menu
+                                .preguntarEntero("Introduce la capacidad bajo el asiento en litros: ");
 
                         Scooter scooter = new Scooter();
                         scooter.setMatricula(matricula);
@@ -172,9 +170,9 @@ public class Main {
                         scooter.setEspacioBajoAsiento(espacioBajoAsiento);
 
                         registrarVehiculo(concesionarioAPP);
-                        
+
                         break;
-                    
+
                     case 2:
                         double velocidadMaxima = Menu.preguntarDecimal("introduce la velocidad maxima: ");
                         boolean tieneQuickShifter = Menu.preguntaBoolean("La moto dispone de QuickShifter?: ");
@@ -198,7 +196,7 @@ public class Main {
 
                         break;
                 }
-            break;
+                break;
 
             case 3:
                 double capacidadCarga = Menu.preguntarDecimal("Introduce la capacidad de carga del camion: ");
@@ -217,16 +215,16 @@ public class Main {
 
                 registrarVehiculo(concesionarioAPP);
 
-            break;
+                break;
         }
     }
-    
-    public static void listarVehiculo(ConcesionarioAPP concesionarioAPP){
+
+    public static void listarVehiculo(ConcesionarioAPP concesionarioAPP) {
         System.out.println("Este es el listado de vehiculos: ");
         concesionarioAPP.listadoVehiculos();
     }
 
-    public static void asignarVehiculo(ConcesionarioAPP concesionarioAPP){
+    public static void asignarVehiculo(ConcesionarioAPP concesionarioAPP) {
 
         String nombrePropietario = Menu.preguntarTexto("Introduce el nombre del propietario: ");
         String apellidosPropietario = Menu.preguntarTexto("Introduce los apellidos del propoietario: ");
@@ -245,7 +243,27 @@ public class Main {
 
         concesionarioAPP.asignarVehiculo(persona, matricula);
 
+    }
 
+    public static void calcularDepreciacion(ConcesionarioAPP concesionarioAPP) {
 
+        String matricula = Menu.preguntarMatricula("Introduce una matricula: ");
+
+        try {
+            double calculoDepreciacion = concesionarioAPP.calcularDepreciacion(matricula);
+            System.out.println("Calculo de la depreciacion :" + calculoDepreciacion);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public static void resumenRiesgo(ConcesionarioAPP concesionarioAPP){
+        String matricula = Menu.preguntarMatricula("introduce una matricula: ");
+
+        try{
+            String resumenRiesgo = concesionarioAPP.resumenRiesgo(matricula);
+        } catch (IllegalArgumentException e){
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 }

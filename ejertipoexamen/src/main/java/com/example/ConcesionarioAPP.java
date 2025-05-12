@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.example.menu.Menu;
+
 public class ConcesionarioAPP {
 
     private List<Vehiculo> listadoVehiculo;
@@ -22,7 +24,7 @@ public class ConcesionarioAPP {
         return this.listadoVehiculo;
     }
 
-    public boolean registrarVehiculo(Vehiculo vehiculo, Persona persona) {
+    public boolean registrarVehiculo(Vehiculo vehiculo) {
 
         if(!mapaVehiculo.containsKey(vehiculo.getMatricula())){
             mapaVehiculo.put(vehiculo.getMatricula(), vehiculo);
@@ -60,6 +62,26 @@ public class ConcesionarioAPP {
         } else {
             System.out.println("No se encontró el vehículo con matrícula " + matricula);
             return false;
+        }
+    }
+
+    public double calcularDepreciacion(String matricula) throws IllegalArgumentException{
+       
+        if(!mapaVehiculo.containsKey(matricula)){
+            throw new IllegalArgumentException("La matricula introducida no existe");
+        } else {
+            return mapaVehiculo.get(matricula).calcularDepreciacion();
+        }
+
+
+    }
+
+    public String resumenRiesgo(String matricula) throws IllegalArgumentException {
+        if(!mapaVehiculo.containsKey(matricula)){
+            throw new IllegalArgumentException("La matricula introducida no existe");
+        } else {
+
+            return mapaVehiculo.get(matricula).calcularRiesgo().toString();
         }
     }
     
