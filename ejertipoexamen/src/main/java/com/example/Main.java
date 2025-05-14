@@ -47,8 +47,7 @@ public class Main {
 
     public static void registrarVehiculo(ConcesionarioAPP concesionarioAPP) {
 
-        Vehiculo vehiculo = null;
-        Coche coche = null;
+        
         Persona persona = null;
 
         String matricula = Menu.preguntarMatricula("Introduce la matricula del vehiculo: ");
@@ -89,7 +88,7 @@ public class Main {
                         sedan.setTraccion(traccion);
                         sedan.setTipoCoche(tipoCoche);
 
-                        registrarVehiculo(concesionarioAPP);
+                        concesionarioAPP.registrarVehiculo(sedan, persona);
 
                         break;
                     case 2:
@@ -112,7 +111,7 @@ public class Main {
                         suv.setCapacidadOffroad(capacidadOffroad);
                         suv.setAlturaLibreSuelo(alturaLibreSuelo);
 
-                        registrarVehiculo(concesionarioAPP);
+                        concesionarioAPP.registrarVehiculo(suv,persona);
                         break;
                     case 3:
                         double aceleracion = Menu.preguntarDecimal("Aceleracion 0 a 100 en segundos: ");
@@ -136,7 +135,7 @@ public class Main {
                         cocheDeportivo.setPotenciaCV(potenciaCV);
                         cocheDeportivo.setTieneModoPista(tieneModoPista);
 
-                        registrarVehiculo(concesionarioAPP);
+                        concesionarioAPP.registrarVehiculo(cocheDeportivo,persona);
 
                         break;
 
@@ -169,7 +168,7 @@ public class Main {
                         scooter.setTipoTransmision(tipoTransmision);
                         scooter.setEspacioBajoAsiento(espacioBajoAsiento);
 
-                        registrarVehiculo(concesionarioAPP);
+                        concesionarioAPP.registrarVehiculo(scooter,persona);
 
                         break;
 
@@ -192,7 +191,7 @@ public class Main {
                         motoDeportiva.setVelocidadMaxima(velocidadMaxima);
                         motoDeportiva.setTieneQuickShifter(tieneQuickShifter);
 
-                        registrarVehiculo(concesionarioAPP);
+                        concesionarioAPP.registrarVehiculo(motoDeportiva,persona);
 
                         break;
                 }
@@ -213,7 +212,7 @@ public class Main {
                 camion.setCapacidadCarga(capacidadCarga);
                 camion.setNumEjes(numEjes);
 
-                registrarVehiculo(concesionarioAPP);
+                concesionarioAPP.registrarVehiculo(camion,persona);
 
                 break;
         }
