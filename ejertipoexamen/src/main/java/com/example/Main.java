@@ -1,10 +1,13 @@
 package com.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.example.menu.Menu;
-import com.example.*;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         ConcesionarioAPP concesionarioAPP = new ConcesionarioAPP();
 
         int opcion = 0;
@@ -43,12 +46,39 @@ public class Main {
                     break;
             }
         }
+            */
+
+        int numero = 6;
+        sumarDos(numero);
+        System.out.println(numero);
+
+        List<Integer> lista = new ArrayList<>();
+        lista.add(1);
+        for(Integer num : lista) {
+            System.out.println(num);
+        }
+        modificarLista(lista);
+        for(Integer num : lista) {
+            System.out.println(num);
+        }
+
+        Coche coche = new Sedan();
+        coche.setMarca("Ferrari");
+    }
+
+    public static void sumarDos(int numero) {
+        numero = numero + 2;
+    }
+
+    public static void modificarLista(List<Integer> lista) {
+        lista.add(2);
     }
 
     public static void registrarVehiculo(ConcesionarioAPP concesionarioAPP) {
 
         
         Persona persona = null;
+        Vehiculo vehiculo = null;
 
         String matricula = Menu.preguntarMatricula("Introduce la matricula del vehiculo: ");
         String marca = Menu.preguntarTexto("Introduce la marca del vehiculo: ");
@@ -88,7 +118,7 @@ public class Main {
                         sedan.setTraccion(traccion);
                         sedan.setTipoCoche(tipoCoche);
 
-                        concesionarioAPP.registrarVehiculo(sedan, persona);
+                        vehiculo = sedan;
 
                         break;
                     case 2:
@@ -111,7 +141,7 @@ public class Main {
                         suv.setCapacidadOffroad(capacidadOffroad);
                         suv.setAlturaLibreSuelo(alturaLibreSuelo);
 
-                        concesionarioAPP.registrarVehiculo(suv,persona);
+                        vehiculo = suv;
                         break;
                     case 3:
                         double aceleracion = Menu.preguntarDecimal("Aceleracion 0 a 100 en segundos: ");
@@ -168,7 +198,7 @@ public class Main {
                         scooter.setTipoTransmision(tipoTransmision);
                         scooter.setEspacioBajoAsiento(espacioBajoAsiento);
 
-                        concesionarioAPP.registrarVehiculo(scooter,persona);
+                        vehiculo = scooter;
 
                         break;
 
@@ -216,6 +246,8 @@ public class Main {
 
                 break;
         }
+        
+        concesionarioAPP.registrarVehiculo(vehiculo, null);
     }
 
     public static void listarVehiculo(ConcesionarioAPP concesionarioAPP) {

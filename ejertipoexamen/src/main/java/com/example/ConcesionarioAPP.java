@@ -6,12 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.example.menu.Menu;
-
 public class ConcesionarioAPP {
 
-    private List<Vehiculo> listadoVehiculo;
-    private Map<String, Vehiculo> mapaVehiculo;
+    private final List<Vehiculo> listadoVehiculo;
+    private final Map<String, Vehiculo> mapaVehiculo;
 
     public ConcesionarioAPP() {
 
@@ -24,7 +22,7 @@ public class ConcesionarioAPP {
         return this.listadoVehiculo;
     }
 
-    public boolean registrarVehiculo(Vehiculo vehiculo) {
+    public boolean registrarVehiculo(Vehiculo vehiculo, Persona persona) {
 
         if(!mapaVehiculo.containsKey(vehiculo.getMatricula())){
             mapaVehiculo.put(vehiculo.getMatricula(), vehiculo);

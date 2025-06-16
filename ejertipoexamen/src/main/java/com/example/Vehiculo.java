@@ -1,6 +1,6 @@
 package com.example;
 
-public abstract  class Vehiculo implements Valorable{
+public abstract  class Vehiculo implements Valorable {
     
     private String matricula, marca, modelo;
     private int anioFabricacion, kilometraje;
@@ -95,9 +95,6 @@ public abstract  class Vehiculo implements Valorable{
     }
 
     public abstract TiposRiesgo calcularRiesgo();
-
-    @Override
-    public abstract double calcularDepreciacion();
 
 
 }
